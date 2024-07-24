@@ -1,3 +1,4 @@
+#!/usr/bin/env -S deno run
 import * as datetime from "https://deno.land/std@0.224.0/datetime/mod.ts";
 import * as path from "https://deno.land/std@0.224.0/path/mod.ts";
 
