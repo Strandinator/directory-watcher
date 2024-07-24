@@ -1,6 +1,6 @@
 #!/usr/bin/env -S deno run
-import * as datetime from "https://deno.land/std@0.224.0/datetime/mod.ts";
-import * as path from "https://deno.land/std@0.224.0/path/mod.ts";
+import * as datetime from "https://deno.land/std@0.224.0/datetime/format.ts";
+import * as path from "https://deno.land/std@0.224.0/path/relative.ts";
 
 if (import.meta.main) {
   setupExitHandler();
