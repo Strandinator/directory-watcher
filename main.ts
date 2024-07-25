@@ -1,6 +1,6 @@
 #!/usr/bin/env -S deno run
-import * as datetime from "https://deno.land/std@0.224.0/datetime/format.ts";
-import * as path from "https://deno.land/std@0.224.0/path/relative.ts";
+import { format as formatDate } from "https://deno.land/std@0.224.0/datetime/format.ts";
+import { relative as relativePath } from "https://deno.land/std@0.224.0/path/relative.ts";
 
 if (import.meta.main) {
   setupExitHandler();
@@ -19,10 +19,10 @@ if (import.meta.main) {
   console.log();
 
   for await (const event of watcher) {
-    const time = datetime.format(new Date(), "HH:mm:ss.SSS");
+    const time = formatDate(new Date(), "HH:mm:ss.SSS");
 
     event.paths.forEach((filePath) => {
-      const fileName = path.relative(dir, filePath);
+      const fileName = relativePath(dir, filePath);
       const updateColor = colorMod(event.kind);
       console.log(`[${time}] %c${event.kind}`, updateColor, fileName);
     });
